@@ -18,31 +18,21 @@ features <- subset(feature, grepl('-(mean|std)[(]', feature$name))
 labels <- read.table('activity_labels.txt', col.names = c('level', 'label'))
 
 
-# Get train and subject data 
-filename  = "train"
-prefix <- paste(filename, '/', sep = '')
-testData <- paste(prefix, 'X_', filename, '.txt', sep = '')
-testLabel <- paste(prefix, 'y_', filename, '.txt', sep = '')
-testSubject <- paste(prefix, 'subject_', filename, '.txt', sep = '')
-data <- read.table(testData)[, features$index]
+# Get training  data 
+data <- read.table("./train/X_train.txt")[, features$index]
 names(data) <- features$name
-label <- read.table(testLabel)[, 1]
+label <- read.table("./train/y_train.txt")[, 1]
 data$label <- factor(label, levels=labels$level, labels=labels$label)
-subject <- read.table(testSubject)[, 1]
+subject <- read.table("./train/subject_train.txt")[, 1]
 data$subject <- factor(subject)
 trainData <- data.table(data)
 
-#Get train data 
-filename  = "train"
-prefix <- paste(filename, '/', sep = '')
-testData <- paste(prefix, 'X_', filename, '.txt', sep = '')
-testLabel <- paste(prefix, 'y_', filename, '.txt', sep = '')
-testSubject <- paste(prefix, 'subject_', filename, '.txt', sep = '')
-data <- read.table(testData)[, features$index]
+#Get test data 
+data <- read.table("./test/X_test.txt")[, features$index]
 names(data) <- features$name
-label <- read.table(testLabel)[, 1]
+label <- read.table("./test/y_test.txt")[, 1]
 data$label <- factor(label, levels=labels$level, labels=labels$label)
-subject <- read.table(testSubject)[, 1]
+subject <- read.table("./test/subject_test.txt")[, 1]
 data$subject <- factor(subject)
 testData <- data.table(data)
 
@@ -58,8 +48,6 @@ names <- gsub('[()-]', '', names)
 names <- gsub('BodyBody', 'Body', names)
 names <- gsub('-mean', 'MEAN', names)
 names <- gsub('-std', 'STD', names) 
-
 setnames(tidyDataset, names)
-setwd('..')
-write.csv(tidyDataset, file = 'TidyDataSet.txt',row.names = FALSE, quote = FALSE)
-
+write.csv(tidyDataset, file = 'TidyDataSet.csv',row.names = FALSE, quote = FALSE)
+getwd()
