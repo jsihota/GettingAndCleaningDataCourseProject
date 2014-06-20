@@ -38,16 +38,22 @@ testData <- data.table(data)
 
 # combine data set 
 combinedDataDet <- rbind(trainData, testData)
-
+tidyDataset <- combinedDataDet[, lapply(.SD, mean), by=list(label, subject)]
 #clean up 
 #Appropriately labels the data set with descriptive variable names
-tidyDataset <- combinedDataDet[, lapply(.SD, mean), by=list(label, subject)]
-# Fix the variable names
 names <- names(tidyDataset)
 names <- gsub('[()-]', '', names) 
-names <- gsub('BodyBody', 'Body', names)
-names <- gsub('-mean', 'MEAN', names)
-names <- gsub('-std', 'STD', names) 
+names <- gsub('BodyBody', 'Body', names) 
+names <- gsub('-mean', 'Mean', names) 
+names <- gsub('-std', 'Std', names) 
+
 setnames(tidyDataset, names)
+
 write.csv(tidyDataset, file = 'TidyDataSet.csv',row.names = FALSE, quote = FALSE)
+# print dataset info
 getwd()
+ncol(tidyDataset) 
+nrow(tidyDataset)
+colnames( tidyDataset )
+head(tidyDataset)
+
