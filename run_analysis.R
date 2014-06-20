@@ -42,10 +42,11 @@ tidyDataset <- combinedDataDet[, lapply(.SD, mean), by=list(label, subject)]
 #clean up 
 #Appropriately labels the data set with descriptive variable names
 names <- names(tidyDataset)
-names <- gsub('[()-]', '', names) 
-names <- gsub('BodyBody', 'Body', names) 
 names <- gsub('-mean', 'Mean', names) 
 names <- gsub('-std', 'Std', names) 
+names <- gsub('[()-]', '', names) 
+names <- gsub('BodyBody', 'Body', names) 
+
 
 setnames(tidyDataset, names)
 
