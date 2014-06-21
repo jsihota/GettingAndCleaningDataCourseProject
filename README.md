@@ -1,5 +1,7 @@
 GettingAndCleaningDataCourseProject
 ===================================
+
+ ## analysis.R ##
 Downloads dataset from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 Extract data to R working directory
 Merges the training and create one data set.
