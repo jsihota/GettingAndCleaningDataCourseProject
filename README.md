@@ -1,7 +1,7 @@
 ## Getting And Cleaning Data Course Project
 ===================================
 
-## R script run_analysis.R  performers the following tasks:  
+#### R script run_analysis.R  performers the following tasks:  
 	* Downloads dataset from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 	* Extract data to R working directory
 	* Loads features dataset 
