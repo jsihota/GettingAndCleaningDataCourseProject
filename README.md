@@ -1,31 +1,25 @@
-GettingAndCleaningDataCourseProject
+## Getting And Cleaning Data Course Project
 ===================================
 
- ## analysis.R ##
-Downloads dataset from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
-Extract data to R working directory
-Merges the training and create one data set.
-Extracts only the measurements on the mean and standard deviation for each measurement. 
-Uses descriptive activity names to name the activities in the data set
-Appropriately labels the data set with descriptive variable names. 
-Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
-Prints summary of tiday dataset
+## R script run_analysis.R  performers the following tasks:  
+	* Downloads dataset from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+	* Extract data to R working directory
+	* Loads features dataset 
+	* Loads labels dataset 
+	* Loads training dataset
+	* Loads test dataset 
+	* Merges the training and create one data set.
+	* Extracts only the measurements on the mean and standard deviation for each measurement. 
+	* Set descriptive activity names to name the activities in the data set
+	* Labels the dataset with descriptive variable names. 
+    * Creates tidy dataset 
+	* Writes dataset to to TidayDataSet.csv
+	* Prints information about of tiday dataset
 
 
 
 
 
-
-DATA
-
-
- The data represent data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained: 
-
-http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
-
-Here are the  original data sets
-
-https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
 
 
