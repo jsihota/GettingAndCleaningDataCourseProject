@@ -1,7 +1,5 @@
 # CodeBook
-# The data represent data collected from the accelerometers 
-from the Samsung Galaxy S smartphone. A full description is 
-available at the site where the data was obtained: 
+#### The data represent data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained: 
 
 ### DATA
 #### Original Data 
@@ -71,3 +69,16 @@ Additional vectors obtained by averaging the signals in a signal window sample. 
 
 # New Tidy Dataset 
 #### Extracts only the measurements on the mean and standard deviation for each measurement.
+
+### Work performed to clean up the data
+* Extracted only the measurements on the mean and standard deviation for each measurement. 
+* Set descriptive activity names to name the activities in the data set
+* Labels the dataset with descriptive variable names. 
+
+### Transformations
+* Replace -mean with Mean
+* Replace -std  with Std
+* Replace BodyBody with Body
+* Remove all [()-]
+
+#### Here is column mapping after transformations 
